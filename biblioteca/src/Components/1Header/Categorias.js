@@ -1,54 +1,34 @@
-import {React, useState, useEffect} from 'react'
-import './headerStyle.css';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./headerStyle.css";
 
 const Categorias = () => {
-    const [datos, setDatos] = useState([]);
+  const [datos, setDatos] = useState([]);
 
-    useEffect(() => {
-        axios
-        .get('http://localhost:3525/json')
-        .then(res => {
-            setDatos(res.data);
-            console.log(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })    
-    }, []);
-    datos.map((index) => {
-        return (
-            <option key={datos.rut}>{console.log(index)}</option>
-        )
-    })
-    return (
-        <div className='BrowseCategory'>
-            <select>
-                <option value="" disabled selected>Categorias</option>
-                {Categorias}
-            </select>
-        </div>
-    )
-}
-/* const Categorias = () => {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        async function buscarNombre(){
-            const result = await axios(
-                'http://localhost:3525/json',
-            );
-            setData(result.data)
-        }
-    })
+  useEffect(() => {
+    axios
+      .get("http://77ff3d849ffd.ngrok.io/json")
+      .then((res) => {
+        setDatos(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-    return (
-        <div className='BrowseCategory'>
-            <select>
-                <option value="" disabled selected>Categorias</option>
-                {Categorias}
-            </select>
-        </div>
-    )
-}
-*/
-export default Categorias
+  return (
+    <div className="BrowseCategory">
+      <select>
+        <option value="" disabled selected>
+          Categorias
+        </option>
+        {datos.map((item) => (
+          <option value={item.nombre}>{item.nombre}</option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+export default Categorias;
