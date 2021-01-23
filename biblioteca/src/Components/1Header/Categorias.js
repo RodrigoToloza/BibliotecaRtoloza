@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import './headerStyle.css';
 import axios from 'axios';
 
@@ -16,16 +16,13 @@ const Categorias = () => {
             console.log(err)
         })    
     }, []);
-    datos.map((index) => {
-        return (
-            <option key={datos.rut}>{console.log(index)}</option>
-        )
-    })
     return (
         <div className='BrowseCategory'>
             <select>
                 <option value="" disabled selected>Categorias</option>
-                {Categorias}
+                {datos.map(index => {
+                    return <option value={index.nombre}>{index.nombre}</option>
+                })}
             </select>
         </div>
     )

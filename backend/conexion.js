@@ -37,7 +37,7 @@ app.get('/json', function (req, res) {
 
         if (err) throw err;
 
-        res.send(rows); 
+        res.json(rows); 
         
     });
   });
