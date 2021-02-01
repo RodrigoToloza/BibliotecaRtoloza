@@ -1,10 +1,15 @@
 import './App.css';
-import Header from './Components/1Header/Header'
+import React from 'react';
+import Header from './Components/1Header/Header';
+import Carrusel from './Components/2Carrusel/Carrusel';
+import Libro from './Components/sharedComponents/Libro'
 
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Header />
+      <Libro />
+      
     </div>
   );
 }
