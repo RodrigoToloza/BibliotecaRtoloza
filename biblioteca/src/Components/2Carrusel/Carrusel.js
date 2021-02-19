@@ -5,6 +5,8 @@ import Slider from 'react-slick';
 //import Book from '../sharedComponents/Libro'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import rside from '../../Assets/Cosanber/rside.png'
+import lside from '../../Assets/Cosanber/lside.png'
 
 const getBook = libro => {
     const backgroundColors = [
@@ -34,6 +36,20 @@ const getBook = libro => {
                      
     return carouselBooks;
 }
+const NextArrow = ({className, style, onClick }) => {
+    
+    return (
+        <img class="next" src={rside} onClick={onClick}/>
+    )
+};
+
+const PrevArrow = ({className, style, onClick }) => {
+    
+    return (
+        <img class="prev" src={lside} onClick={onClick}/>
+    )
+};
+
 
 const Carrusel = ({book}) => {
 var settings = {
@@ -42,13 +58,17 @@ var settings = {
             infinite: true,
             centerPadding: '30px',
             slidesToShow: 3,
-            speed: 500                
+            speed: 500,
+            // nextArrow: <NextArrow />,
+            // prevArrow: <PrevArrow />           
                 };        
     return(
-        <div className="Carrusel">
-            <Slider {...settings}>
-                   {getBook(book)}
-            </Slider>
+        <div className="cont">
+            <div className="Carrusel">
+                <Slider {...settings}>
+                    {getBook(book)}
+                </Slider>
+            </div>
         </div>
     )
 }

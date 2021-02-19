@@ -113,7 +113,7 @@ header {
   cursor: pointer;
   visibility: visible;
 }
-.Menu {
+/* .Menu {
   background-color: #FAFAFA;
   height: inherit;
   flex: 2;
@@ -135,4 +135,4 @@ header {
 }
 .Menu:hover {
   color: #455A64;
-}
+} */
