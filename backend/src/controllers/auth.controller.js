@@ -19,6 +19,10 @@ export const signUp = async (req,res) => {
             + '"' + email + '",'
             + '"' + rol + '"' +       
         ')';
+        if (rol) {
+            console.log('en contruccion') 
+        }
+
         db.query(sql, (err, result) => {
             if (err) throw err.sqlMessage;
         })
