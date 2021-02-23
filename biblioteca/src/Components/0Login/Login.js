@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from "../../Assets/Cosanber/cosanberlogo.png";
-import './login.css'
+import './login.css';
+import axios from 'axios';
 
 const Login = () => {
-    
-    const onChange = () => {    
+    const [rut, setRut] = useState('');
+    const [password, setPassword] = useState('');
+
+    const Validar = () => { 
+        const user = {
+            rut: rut,
+            password: password
+        }
+        console.log(user)
+
+        // try {
+        //     const response = await axios.post({
+        //         url: 'http://localhost:3525/api/auth/login',
+        //         data: user
+        //     })
+        //     console.log(response)
+        // } catch (error) {
+        //     console.log(error)
+        // }
     }
     
     return (
@@ -20,7 +38,7 @@ const Login = () => {
                             id="rut"
                             name="rut"
                             placeholder="Rut sin dv"
-                            onChange={onChange}
+                            onChange={(e) => {setRut(e.target.value)}}
                         ></input>
                     </div>
                     <div className="campo-form">
@@ -30,11 +48,15 @@ const Login = () => {
                             id="password"
                             name="password"
                             placeholder="Password"
-                            onChange={onChange}
+                            onChange={(e) => {setPassword(e.target.value)}}
                         ></input>
                     </div>
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-submit" value="Iniciar Sesion"></input>
+                        <input 
+                            type="submit" 
+                            className="btn btn-submit" 
+                            onClick={Validar} 
+                            value="Iniciar Sesion"></input>
                     </div>
                 </form>
             
