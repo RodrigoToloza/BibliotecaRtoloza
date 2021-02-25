@@ -6,12 +6,16 @@ const router = Router();
 
 router.post("/", [authJwt.verifyToken, authJwt.isModerator ],booksCtrl.createBook)
 
-router.get("/", booksCtrl.getBooks)
+router.get("/cats", booksCtrl.getCats )
 
 router.get("/:bookId", booksCtrl.getBookById)
+
+router.get("/", booksCtrl.getBooks )
 
 router.put("/:bookId", [authJwt.verifyToken, authJwt.isAdmin ], booksCtrl.updateBookById)
 
 router.delete("/:bookId", [authJwt.verifyToken, authJwt.isAdmin ], booksCtrl.deleteBooksById)
+
+
 
 export default router;

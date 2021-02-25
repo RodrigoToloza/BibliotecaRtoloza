@@ -1,29 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import logo from "../../Assets/Cosanber/cosanberlogo.png";
 import './login.css';
-import axios from 'axios';
+import {getCats} from '../sharedComponents/querys';
 
 const Login = () => {
     const [rut, setRut] = useState('');
     const [password, setPassword] = useState('');
 
-    const Validar = () => { 
-        const user = {
-            rut: rut,
-            password: password
-        }
-        console.log(user)
-
-        // try {
-        //     const response = await axios.post({
-        //         url: 'http://localhost:3525/api/auth/login',
-        //         data: user
-        //     })
-        //     console.log(response)
-        // } catch (error) {
-        //     console.log(error)
-        // }
-    }
     
     return (
         <div className="form-usuario">    
@@ -53,9 +36,17 @@ const Login = () => {
                     </div>
                     <div className="campo-form">
                         <input 
-                            type="submit" 
+                            type="button" 
                             className="btn btn-submit" 
-                            onClick={Validar} 
+                            onClick={()=> {
+                                const user = {
+                                    rut: rut,
+                                    password: password
+                                }
+                                const val = getCats(user)
+                                console.log(val.status)
+                                
+                            }} 
                             value="Iniciar Sesion"></input>
                     </div>
                 </form>

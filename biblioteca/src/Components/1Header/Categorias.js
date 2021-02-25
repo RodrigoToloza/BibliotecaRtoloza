@@ -7,7 +7,7 @@ const Categorias = () => {
 
     useEffect(() => {
         axios
-        .get('http://localhost:3525/cats')
+        .get('http://localhost:3525/api/books/cats')
         .then(res => {
             setDatos(res.data);
         })

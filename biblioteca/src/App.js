@@ -1,13 +1,9 @@
 import './App.css';
 import React from 'react';
-import Header from './Components/1Header/Header';
-import Carrusel from './Components/2Carrusel/Carrusel';
-import Libro from './Components/sharedComponents/Libro'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom'
 import Login from './Components/0Login/Login'
 import Main from './Components/Main'

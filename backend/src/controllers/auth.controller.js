@@ -2,8 +2,15 @@ import db from '../database';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import config from '../config';
+import { validationResult } from 'express-validator';
 
 export const signUp = async (req,res) => {
+    //Revisar Errores 
+    const errores = validationResult(req);
+    if( !errores.isEmpty() ){
+        return res.status(400).json({errores: errores.array()})
+    }
+
     const {rut, password, nombre, apellido, email, rol} = req.body;  
 
     await bcrypt.hash(password, 10, (err,hash) => {

@@ -38,6 +38,13 @@ export const getBookById = async (req, res) => {
     })
 }
 
+export const getCats = async (req, res) => {
+     await db.query('SELECT nombre FROM categorias', (err, rows) => {       
+         if (err) throw err;
+         res.json(rows);
+     })
+}
+
 export const updateBookById = (req, res) => {
     res.json('En proceso...');
 }
@@ -48,3 +55,4 @@ export const deleteBooksById = async(req, res) => {
         res.json(rows.affectedRows);
     });
 }
+
