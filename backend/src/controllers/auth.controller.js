@@ -56,7 +56,15 @@ export const Login = async (req,res) => {
                         message: "Rut y contraseña no coinciden"
                     });
                 }else{
-                    const token = jwt.sign({id: rut}, config.SECRET, {
+                    const payload = {
+                        usuario: {
+                            id: rut,
+                            name: rows[0].nombre,
+                            lname: rows[0].apellido,
+                            rol: rows[0].rol
+                        }
+                    }
+                    const token = jwt.sign(payload, config.SECRET, {
                         expiresIn:86400
                     })
                     res.json({

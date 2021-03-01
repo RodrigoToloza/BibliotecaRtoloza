@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import logo from "../../Assets/Cosanber/cosanberlogo.png";
 import './login.css';
-import {getCats} from '../sharedComponents/querys';
+import {login} from '../sharedComponents/Baul';
 
 const Login = () => {
     const [rut, setRut] = useState('');
@@ -43,9 +43,11 @@ const Login = () => {
                                     rut: rut,
                                     password: password
                                 }
-                                const val = getCats(user)
-                                console.log(val.status)
-                                
+                                login(user)
+                                    .then(val => {
+                                        console.log(val)
+                                    })
+                                    .catch(err => console.log(err))
                             }} 
                             value="Iniciar Sesion"></input>
                     </div>

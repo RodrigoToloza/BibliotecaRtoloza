@@ -5,7 +5,7 @@ import Carrusel from '../2Carrusel/Carrusel';
 const Libro = () => {
     const [book, setLibro] = useState([]);
     useEffect(()=> {
-        axios('http://localhost:3525/libros')
+        axios('http://localhost:3525/api/books')
         .then(res => {
             setLibro(res.data);
         })

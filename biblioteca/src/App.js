@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import Login from './Components/0Login/Login'
 import Main from './Components/Main'
-import NavBar from './Components/3Main/NavBar'
+
 
 function App() {
   return (
@@ -16,7 +16,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login}></Route>
           <Route exact path="/Main" component={Main}></Route>
-          <Route exact path="/NavBar" component={NavBar}></Route>
         </Switch>
       </Router>
     </div>

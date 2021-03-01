@@ -1,26 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import './headerStyle.css';
-import axios from 'axios';
+import baul from '../sharedComponents/Baul';
 
 const Categorias = () => {
-    const [datos, setDatos] = useState([]);
+    const [cats, setCats] = useState([]);
 
     useEffect(() => {
-        axios
-        .get('http://localhost:3525/api/books/cats')
-        .then(res => {
-            setDatos(res.data);
-        })
-        .catch(err => {
-            console.log(err)
-        })    
+          baul.getCats()
+          .then(cate => setCats(cate)) 
     }, []);
     return (
         <div className='BrowseCategory'>
             <select>
                 <option value="categorias" disabled selected>Categorias</option>
-                {datos.map(index => {
-                    return <option value={index.nombre}>{index.nombre}</option>
+                {cats.map(index => {
+                    return <option value={index.nombre} key={index.id}>{index.nombre}</option>
                 })}
             </select>
         </div>

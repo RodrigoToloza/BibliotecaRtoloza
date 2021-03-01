@@ -39,7 +39,7 @@ export const getBookById = async (req, res) => {
 }
 
 export const getCats = async (req, res) => {
-     await db.query('SELECT nombre FROM categorias', (err, rows) => {       
+     await db.query('SELECT * FROM categorias', (err, rows) => {       
          if (err) throw err;
          res.json(rows);
      })
