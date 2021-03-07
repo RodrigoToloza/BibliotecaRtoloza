@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import BookShelf from './bookShelf/BookShelf';
+import React, { Component } from "react";
+import BookShelf from "./bookShelf/BookShelf";
 
-class Main extends Component {
-  render() {
-    return (
-      <div className='Main'>
-        <BookShelf />
-      </div>
-    );
-  }
-}
+const Main = () => {
+  console.log("MAIN");
+
+  return (
+    <div className="Main">
+      <BookShelf />
+    </div>
+  );
+};
 
 export default Main;
