@@ -31,9 +31,18 @@ export async function getCats () {
         console.log(error)
     }
 }
+export async function getBestCat ({cat}) {
+    try {
+        const resp = await axios(`http://localhost:3525/api/books/getBestByCat/${(cat)}`)
+        return resp.data
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export default { 
     login, 
     getBook,
-    getCats
+    getCats,
+    getBestCat
 };

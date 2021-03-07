@@ -130,7 +130,7 @@ ul {
 }
 .CategoryButtonActive {
   border-bottom: 2px solid #0091EA;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .Books {
   background-color: #FAFAFA;

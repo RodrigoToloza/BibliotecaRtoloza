@@ -56,3 +56,10 @@ export const deleteBooksById = async(req, res) => {
     });
 }
 
+export const getBestByCat = async (req, res) => {  
+    const sql = `SELECT * FROM libros WHERE cat1=${req.params.cat} OR cat2=${req.params.cat} OR cat3=${req.params.cat} ORDER BY rate DESC LIMIT 6` 
+    await db.query(sql, req.params.cat, (err, rows) => {
+        if (err) throw err;
+        res.json(rows)
+    })
+}

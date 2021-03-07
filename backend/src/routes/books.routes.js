@@ -16,6 +16,7 @@ router.put("/:bookId", [authJwt.verifyToken, authJwt.isAdmin ], booksCtrl.update
 
 router.delete("/:bookId", [authJwt.verifyToken, authJwt.isAdmin ], booksCtrl.deleteBooksById)
 
+router.get("/getBestByCat/:cat", booksCtrl.getBestByCat)
 
 
 export default router;

@@ -1,28 +1,14 @@
 import React from 'react';
-import '../Carrusel.css';
-import Cover from './Cover';
-import Info from "./Info";
-import Rate from '../../sharedComponents/Rate';
+import './Carrusel.css';
+import Rate from '../sharedComponents/Rate';
 
-// const Card = ({bookInfo, style, dark}) => {
-//   return (
-//     <div className="Card" style={style}>
-//       <Cover img={bookInfo.url}/>
-//       <Info 
-//         titulo={bookInfo.titulo} 
-//         autor={bookInfo.autor} 
-//         rate={bookInfo.rate}
-//         voters={bookInfo.votos}
-//         color={dark} 
-//         descripcion={bookInfo.descripcion}             
-//       />
-//     </div>
-// );
-// }
 const Card = ({bookInfo, style, dark}) => {
   const textColor = '#FFFFFF';
   return (
     <div className="Card" style={style}>
+      <div className="Cover">
+        <img src={()=>{return `../../Assets/Covers/${bookInfo.url}`}} alt="Portada"/>
+      </div>
       <div className="Info">
         <h1>{bookInfo.titulo}</h1>
         <p className="Autor">por {bookInfo.autor}</p>
