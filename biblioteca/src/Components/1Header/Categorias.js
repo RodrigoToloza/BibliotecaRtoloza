@@ -3,6 +3,7 @@ import './headerStyle.css';
 import baul from '../sharedComponents/Baul';
 
 const Categorias = () => {
+    console.log('hola desde categorias')
     const [cats, setCats] = useState([]);
 
     useEffect(() => {
