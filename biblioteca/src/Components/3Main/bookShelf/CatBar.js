@@ -1,36 +1,87 @@
 import React, { useState, useEffect } from 'react';
 import baul from '../../sharedComponents/Baul'
 import '../main.css'
+import CardBook from './CardBook'
 
-const getCat = categorias =>{
-    //console.table(categorias.slice(0,2))
-     let selected = []
-     for(let i=0; i<4; i++){
-         selected.push(categorias[Math.floor(Math.random() * categorias.length)])
-     }
-     console.log(selected[0])
+const CatBar = ( cats ) => {
+    console.log(typeof cats)
+    if (!cats){
+        console.log('cats vacio desde catbar')
+    }else{
+        console.log(JSON.stringify(cats))
+        let bar = JSON.stringify(cats)
+        
+    }
 
-    console.log(Array.isArray(categorias))
-}
-const CatBar = () => {
-    const [cats, setCats] = useState({})
-
-    useEffect(() => {
-        baul.getCats()
-        .then(cate => {
-            setCats(cate)
-            // console.table(cate.slice(0,2))
-        })
-        .catch(e => console.log(e))
-    },[])
+    const [activeFilter, setActiveFilter] = useState('')
     
+    // const opt = Object.keys(cats).map(index => {
+    //     return <div>{index.nombre}</div>
+    // })
+    return (<div>hola</div>)
 
-    return ( 
-        <div className="NavBar">
-            {getCat(cats)}
-        </div>
-    )
-    
+    // let style = 'CategoryButton'
+    // if (cats.nombre === activeFilter) {
+    //     style = 'CategoryButton CategoryButtonActive'}
+
+    //     return <div>
+    //         <button
+    //             onClick={() => {
+    //                 console.log(cats.nombre)
+    //                 setActiveFilter(cats.nombre)
+    //                 console.log(activeFilter)
+    //             }}
+    //             className={style}
+    //         >
+    //             {cats.nombre}
+    //         </button>
+    //     </div>
 }
 
-export default CatBar;
+    export default CatBar;
+
+// const CatBar = (cats) => {
+//     // const [cats, setCats] = useState([]);
+//      const [activeFilter, setActiveFilter] = useState('');
+
+//     // useEffect(() => {
+//     //     baul.getCats()
+//     //     .then(cate => {
+//     //         setCats(()=>{   
+//     //             let randCate = [] 
+//     //             for (let i=0; i<5; i++){
+//     //                  randCate = cate.sort(()=> {return Math.random() - 0.5})
+//     //             }
+//     //             return randCate.slice(0,4)
+//     //         })
+//     //     })
+//     //     .catch(e => console.log(e))
+
+//     // },[])
+
+//     return ( 
+//         <div className="NavBar">
+//             {cats.map(cats => {
+//                 let style = 'CategoryButton'
+//                 if(cats.nombre === activeFilter){
+//                     style = 'CategoryButton CategoryButtonActive'
+//                 }
+//                 return <div>  
+//                         <button 
+//                             className={style} 
+//                             onClick={() => {  
+//                                 console.log(cats.nombre)                           
+//                                 setActiveFilter(cats.nombre)
+//                                 console.log(activeFilter)
+//                             }}
+//                         >
+//                             {cats.nombre}
+//                         </button>
+//                         </div>
+//             })}
+//         </div>
+//     )
+
+// }
+
+// export default CatBar;

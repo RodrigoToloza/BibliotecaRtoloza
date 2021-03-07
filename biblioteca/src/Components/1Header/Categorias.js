@@ -11,10 +11,10 @@ const Categorias = () => {
     }, []);
     return (
         <div className='BrowseCategory'>
-            <select>
+            <select defaultValue="categorias">
                 <option value="categorias" disabled selected>Categorias</option>
                 {cats.map(index => {
-                    return <option value={index.nombre} key={index.id}>{index.nombre}</option>
+                    return <option value={index.nombre} key={index.codigo}>{index.nombre}</option>
                 })}
             </select>
         </div>
