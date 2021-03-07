@@ -41,23 +41,23 @@ const CatBar = ( cats ) => {
     export default CatBar;
 
 // const CatBar = (cats) => {
-//     // const [cats, setCats] = useState([]);
+//     const [cats, setCats] = useState([]);
 //      const [activeFilter, setActiveFilter] = useState('');
 
-//     // useEffect(() => {
-//     //     baul.getCats()
-//     //     .then(cate => {
-//     //         setCats(()=>{   
-//     //             let randCate = [] 
-//     //             for (let i=0; i<5; i++){
-//     //                  randCate = cate.sort(()=> {return Math.random() - 0.5})
-//     //             }
-//     //             return randCate.slice(0,4)
-//     //         })
-//     //     })
-//     //     .catch(e => console.log(e))
+//     useEffect(() => {
+//         baul.getCats()
+//         .then(cate => {
+//             setCats(()=>{   
+//                 let randCate = [] 
+//                 for (let i=0; i<5; i++){
+//                      randCate = cate.sort(()=> {return Math.random() - 0.5})
+//                 }
+//                 return randCate.slice(0,4)
+//             })
+//         })
+//         .catch(e => console.log(e))
 
-//     // },[])
+//     },[])
 
 //     return ( 
 //         <div className="NavBar">
