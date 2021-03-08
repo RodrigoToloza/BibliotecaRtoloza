@@ -1,17 +1,17 @@
-import React from 'react'
-import Header from './1Header/Header'
-import Libro from './sharedComponents/Libro'
-import Carrusel from './2Carrusel/Carrusel'
-import MrMain from './3Main/Main'
+import React from "react";
+import Header from "./1Header/Header";
+import Libro from "./sharedComponents/Libro";
+import Carrusel from "./2Carrusel/Carrusel";
+import MrMain from "./3Main/Main";
 
 const Main = () => {
-    return (
-        <div>
-            <Header />
-            <Carrusel />
-            <MrMain />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Header />
+      <Carrusel />
+      <MrMain />
+    </div>
+  );
+};
 
-export default Main
+export default Main;
